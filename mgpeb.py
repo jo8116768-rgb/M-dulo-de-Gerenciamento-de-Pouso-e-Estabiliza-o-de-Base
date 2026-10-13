@@ -1,6 +1,6 @@
 # MGPEB - Módulo de Gerenciamento de Pouso e Estabilização de Base
 # Missão Aurora Siger
-
+#
 # Constante global definindo o limite mínimo de combustível para operação segura
 LIMITE_COMBUSTIVEL = 30
 
