@@ -140,10 +140,10 @@ def processar_pouso():
     if autoriza:
         if pouso_padrao:
             modulo["tipo_pouso"] = "Padrão"
-            print("\n✅ POUSO PADRÃO CONCLUÍDO")
+            print("\n POUSO PADRÃO CONCLUÍDO")
         elif pouso_emergencia:
             modulo["tipo_pouso"] = "Emergência"
-            print("\n🚨 POUSO DE EMERGÊNCIA CONCLUÍDO")
+            print("\n POUSO DE EMERGÊNCIA CONCLUÍDO")
             
         # Remove do topo da fila (pop) e adiciona na lista de pousados
         modulos_pousados.append(fila_pouso.pop(0))
@@ -164,7 +164,7 @@ def processar_pouso():
         # Move o módulo bloqueado para o final da fila para testar os próximos
         fila_pouso.append(fila_pouso.pop(0))
         
-        print(f"\n❌ NÃO POUSAR")
+        print(f"\n NÃO POUSAR")
         print(f"Motivo: {texto_motivo}")
         print(f"O módulo {modulo['nome']} foi movido para o FINAL da fila.")
 
@@ -200,13 +200,13 @@ def desempilhar_alerta():
     else:
         # pop() em uma lista atua perfeitamente como o desempilhamento padrão LIFO
         alerta_resolvido = pilha_alertas.pop()
-        print(f"\n✅ Alerta resolvido e retirado da pilha: \n'{alerta_resolvido}'")
+        print(f"\n Alerta resolvido e retirado da pilha: \n'{alerta_resolvido}'")
 
 
 def buscar_modulo():
     """Algoritmos de busca para recuperar informações dos módulos."""
     if len(fila_pouso) == 0 and len(modulos_pousados) == 0:
-        print("\nNão há módulos cadastrados no sistema.")
+        print("\n Não há módulos cadastrados no sistema.")
         return
 
     print("\n=== MENU DE BUSCA ===")
@@ -282,7 +282,7 @@ def reordenar_fila():
                 if fila_pouso[j]["combustivel"] > fila_pouso[j + 1]["combustivel"]:
                     # Swap manual
                     fila_pouso[j], fila_pouso[j + 1] = fila_pouso[j + 1], fila_pouso[j]
-        print("\n✅ Fila reordenada! Módulos com MENOS combustível estão no topo.")
+        print("\n Fila reordenada! Módulos com MENOS combustível estão no topo.")
 
     elif escolha == "2":
         pesos = {"Alta": 1, "Média": 2, "Baixa": 3}
@@ -298,7 +298,7 @@ def reordenar_fila():
                 # Condição de troca: Se o peso numérico for maior OU (se pesos iguais, a hora for mais tarde)
                 if peso_atual > peso_prox or (peso_atual == peso_prox and hora_atual > hora_prox):
                     fila_pouso[j], fila_pouso[j + 1] = fila_pouso[j + 1], fila_pouso[j]
-        print("\n✅ Fila reordenada! Prioridades respeitadas com horários servindo de desempate.")
+        print("\n Fila reordenada! Prioridades respeitadas com horários servindo de desempate.")
         
     elif escolha == "3":
         # Bubble Sort puramente cronológico
@@ -306,7 +306,7 @@ def reordenar_fila():
             for j in range(0, n - i - 1):
                 if fila_pouso[j]["horario_chegada"] > fila_pouso[j + 1]["horario_chegada"]:
                     fila_pouso[j], fila_pouso[j + 1] = fila_pouso[j + 1], fila_pouso[j]
-        print("\n✅ Fila reordenada em ordem cronológica de chegada.")
+        print("\n Fila reordenada em ordem cronológica de chegada.")
 
     else:
         print("\nOpção inválida.")
