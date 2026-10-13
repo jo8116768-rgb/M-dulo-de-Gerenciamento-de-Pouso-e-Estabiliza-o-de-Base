@@ -44,3 +44,6 @@ O algoritmo avalia quatro variáveis booleanas de telemetria: `Combustivel_OK` (
 1. **Pouso Padrão (Porta AND):**
    ```text
    Pouso_Padrao = Combustivel_OK AND Sensores_OK AND Clima_Favoravel AND Pista_Livre
+## 📂 Código Fonte
+
+- O algoritmo completo e implementado está disponível no arquivo: [`mgpeb.py`](./mgpeb.py)
