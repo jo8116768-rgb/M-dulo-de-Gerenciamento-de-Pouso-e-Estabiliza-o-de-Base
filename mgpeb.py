@@ -78,7 +78,7 @@ def cadastrar_modulo():
     }
 
     fila_pouso.append(modulo) # Enfileiramento padrão (FIFO)
-    print("\n✅ Módulo cadastrado com sucesso!")
+    print("\n Módulo cadastrado com sucesso!")
 
 
 def visualizar_fila():
